@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="progress-container">
+        <label for="progress">Progress:</label>
+        <progress id="progress" value="0" max="100"></progress>
+    </div>
+    <div>
+        <form onsubmit="addTask(event)">
+            <input type="text" id="command" placeholder="Enter command" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+        <div id="tables">
+        <div>
+            <h2 onclick="toggleTable('queuedTable')">Queued Tasks</h2>
+            <table id="queuedTable" class="hidden">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Command</th>
+                    </tr>
+                </thead>
+                <tbody id="queuedTasks"></tbody>
+            </table>
+        </div>
+        <div>
+            <h2 onclick="toggleTable('runningTable')">Running Tasks</h2>
+            <table id="runningTable" class="hidden">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Command</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody id="runningTasks"></tbody>
+            </table>
+        </div>
+        <div>
+            <h2 onclick="toggleTable('completedTable')">Completed Tasks</h2>
+            <table id="completedTable" class="hidden">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Command</th>
+                        <th>Duration</th>
+                        <th>Output</th>
+                    </tr>
+                </thead>
+                <tbody id="completedTasks"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/util.js"></script>
+</body>
+</html>
